@@ -28,7 +28,6 @@ public class MySingleton
             mInstance=new MySingleton(context);
         }
         return mInstance;
-
     }
 
     public RequestQueue getRequestQueue()
@@ -44,5 +43,4 @@ public class MySingleton
     {
         requestQueue.add(request);
     }
-
 }
