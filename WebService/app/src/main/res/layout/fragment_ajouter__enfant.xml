@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@color/bleuciel"
+    android:id="@+id/fragAjoutEnfant"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="habib.webservice.MainActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+
+        <EditText
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/txtIdEnfant"
+            android:hint="Donner  l'identificateur" />
+
+        <EditText
+            android:layout_width="255dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtNomEnfant"
+            android:hint="Donner le nom"
+            />
+
+        <EditText
+            android:layout_width="245dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:hint="Donner le prénom"
+            android:id="@+id/txtPrenomEnfant" />
+
+        <EditText
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/txtDate_naissanceEnfant"
+            android:hint="Donner la Date naissance"
+             />
+        <EditText
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtEcoleEnfant"
+            android:ems="10"
+            android:hint="Institut"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajouter"
+                android:id="@+id/btAjouterEnfant"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btInscrire"
+                android:layout_toEndOf="@+id/btInscrire" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Effacer"
+                android:id="@+id/btEffacerEnfant"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/btAjouterEnfant"
+                android:layout_toEndOf="@+id/btAjouterEnfant" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

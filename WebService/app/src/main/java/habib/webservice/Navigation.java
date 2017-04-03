@@ -1,5 +1,6 @@
 package habib.webservice;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -14,10 +15,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import habib.webservice.Fragemnts.Historique_des_activites;
+
 public class Navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
+    public static String LoginValue;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -40,20 +45,28 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        Intent i=getIntent();
+        LoginValue= i.getStringExtra("value");
+
     }
 
     @Override
-    public void onBackPressed() {
+    public void onBackPressed()
+    {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
+        if (drawer.isDrawerOpen(GravityCompat.START))
+        {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        }
+        else
+        {
             super.onBackPressed();
         }
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation, menu);
         return true;
@@ -67,7 +80,8 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_settings)
+        {
             return true;
         }
 
@@ -76,17 +90,21 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
+    public boolean onNavigationItemSelected(MenuItem item)
+    {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         FragmentManager fragmentManager =getSupportFragmentManager();
         if (id == R.id.nav_camera)
         {
             fragmentManager.beginTransaction().replace(R.id.content,new Information_personnelle()).commit();
+            //fragmentManager.beginTransaction().replace(R.id.content,new ajouter_Enfant()).commit();
+            //fragmentManager.beginTransaction().replace(R.id.content,new Ajouter_Conjoint()).commit();
 
             // Handle the camera action
             //getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Information_personnelle()
             //).commit();
+            //98 959 991
 
         }
         else
@@ -105,6 +123,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         else
         if (id == R.id.nav_manage)
         {
+
 
         }
         else if (id == R.id.nav_share)

@@ -15,4 +15,23 @@
         android:layout_marginTop="55dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView9">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter un  enfant"
+            android:id="@+id/btEnfant" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter conjoint"
+            android:id="@+id/btConjoint" />
+    </LinearLayout>
 </RelativeLayout>

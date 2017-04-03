@@ -18,11 +18,13 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 
+import habib.webservice.Controller.MySingleton;
+
 public class MainActivity extends AppCompatActivity
 {
     EditText matricule,login,password,confirmPassword;
     Button btAjouter ,btEffacer;
-    String URL = "http://192.168.1.6:88/Ametap/AjouterAdherent.php";
+    String URL = "http://192.168.1.7:88/Ametap/AjouterAdherent.php";
     AlertDialog.Builder builder;
 
 
@@ -50,11 +52,15 @@ public class MainActivity extends AppCompatActivity
         });
 
         btAjouter=(Button)findViewById(R.id.btInscrire);
-        btAjouter.setOnClickListener(new View.OnClickListener() {
-                                         public void onClick(View v) {
+        btAjouter.setOnClickListener(
+                new View.OnClickListener() {
+                                         public void onClick(View v)
+                                         {
                                              if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
                                                  confirmPassword.setError("Vérifier le code");
-                                             } else {
+                                             }
+                                             else
+                                             {
                                                  final String myMatricule, myLogin, myPassword;
                                                  myMatricule = matricule.getText().toString();
                                                  myLogin = login.getText().toString();

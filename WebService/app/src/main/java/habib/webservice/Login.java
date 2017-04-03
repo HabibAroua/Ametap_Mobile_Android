@@ -17,6 +17,8 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import habib.webservice.Controller.MySingleton;
+
 public class Login extends AppCompatActivity
 {
     private TextView inscrire;
@@ -49,18 +51,19 @@ public class Login extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.7:88/Ametap/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
+               JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.7:88/Ametap/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
                         ,new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response)
                     {
-                        try
+                      try
                         {
-                            login = response.getString("login");
+                           login = response.getString("login");
                             mot_de_passe=response.getString("password");
                             Toast.makeText(Login.this, login+" "+mot_de_passe, Toast.LENGTH_SHORT).show();
                             Intent i=new Intent(Login.this,Navigation.class);
+                            i.putExtra("value",email.getText().toString());
                             startActivity(i);
                         }
                         catch(JSONException ex)
@@ -71,7 +74,6 @@ public class Login extends AppCompatActivity
                     }
                 },new Response.ErrorListener()
                 {
-
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {
@@ -91,6 +93,7 @@ public class Login extends AppCompatActivity
             {
                 email.setText("");
                 password.setText("");
+
             }
         });
     }
