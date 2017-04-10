@@ -42,7 +42,7 @@ public class ConjointService
                     public void onResponse(String response)
                     {
                         AlertDialog.Builder a_builder=new AlertDialog.Builder(c);
-                        a_builder.setMessage("Erreur").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
@@ -52,15 +52,11 @@ public class ConjointService
                         AlertDialog alert=a_builder.create();
                         alert.setTitle("Alert");
                         alert.show();
-                        //Toast.makeText(c, "Error ...", Toast.LENGTH_SHORT).show();
-
-
                     }
                 }
                 ,
                 new Response.ErrorListener()
                 {
-
                     @Override
                     public void onErrorResponse(VolleyError error)
                     {

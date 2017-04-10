@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
 {
     EditText matricule,login,password,confirmPassword;
     Button btAjouter ,btEffacer;
-    String URL = "http://192.168.1.7:88/Ametap/AjouterAdherent.php";
+    String URL = "http://192.168.1.8:88/Ametap/AjouterAdherent.php";
     AlertDialog.Builder builder;
 
 

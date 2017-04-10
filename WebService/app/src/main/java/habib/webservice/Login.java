@@ -51,7 +51,7 @@ public class Login extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-               JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.7:88/Ametap/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
+               JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.8:88/Ametap/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
                         ,new Response.Listener<JSONObject>() {
 
                     @Override
