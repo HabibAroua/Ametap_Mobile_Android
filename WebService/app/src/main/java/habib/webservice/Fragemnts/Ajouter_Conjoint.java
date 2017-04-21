@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import habib.webservice.Controller.ConjointService;
+import habib.webservice.Controller.ConjointController.ConjointService;
 import habib.webservice.Navigation;
 import habib.webservice.R;
 
@@ -21,7 +21,8 @@ public class Ajouter_Conjoint extends Fragment
     private Button btAjouter,btEffacer;
     private EditText txtCin,txtNom,txtPrenom,txtDate_naissance,txtMetier;
 
-    public Ajouter_Conjoint() {
+    public Ajouter_Conjoint()
+    {
         // Required empty public constructor
     }
 
@@ -62,5 +63,4 @@ public class Ajouter_Conjoint extends Fragment
 
         return v;
     }
-
 }

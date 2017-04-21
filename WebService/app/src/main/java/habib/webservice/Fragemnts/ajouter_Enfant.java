@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import habib.webservice.Controller.EnfantService;
+import java.net.UnknownHostException;
+
+import habib.webservice.Controller.EnfantController.EnfantService;
 import habib.webservice.Navigation;
 import habib.webservice.R;
 
@@ -51,7 +53,14 @@ public class ajouter_Enfant extends Fragment
                                 Navigation n=new Navigation();
                                 String s=n.LoginValue;
                                 EnfantService es=new EnfantService();
-                                es.AjouterEnfant(id.getText().toString(),nom.getText().toString(),prenom.getText().toString(),date_naissance.getText().toString(),ecole.getText().toString(),s,getContext());
+                                try
+                                {
+                                    es.AjouterEnfant(id.getText().toString(),nom.getText().toString(),prenom.getText().toString(),date_naissance.getText().toString(),ecole.getText().toString(),s,getContext());
+                                }
+                                catch (UnknownHostException e)
+                                {
+                                    e.printStackTrace();
+                                }
                                 //Toast.makeText(getContext(), s, Toast.LENGTH_SHORT).show();
                             }
                         }

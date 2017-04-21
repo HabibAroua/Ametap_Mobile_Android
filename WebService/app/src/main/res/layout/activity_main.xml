@@ -9,15 +9,33 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="habib.webservice.MainActivity">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="false">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true">
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/ic_ame_inscr"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Inscription"
+            android:id="@+id/textView23"
+            android:layout_gravity="center_horizontal" />
+
         <EditText
-            android:layout_width="255dp"
+            android:layout_width="401dp"
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
@@ -25,7 +43,7 @@
             android:hint="Matricule" />
 
         <EditText
-            android:layout_width="255dp"
+            android:layout_width="389dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -33,7 +51,7 @@
             android:hint="Login" />
 
         <EditText
-            android:layout_width="245dp"
+            android:layout_width="396dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -43,7 +61,7 @@
             android:hint="Mot de passe" />
 
         <EditText
-            android:layout_width="243dp"
+            android:layout_width="404dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
@@ -53,7 +71,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="289dp">
+            android:layout_height="48dp">
 
             <Button
                 android:layout_width="wrap_content"
@@ -61,8 +79,9 @@
                 android:text="Inscrire"
                 android:id="@+id/btInscrire"
                 android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_toLeftOf="@+id/btEffacer"
+                android:layout_marginRight="45dp"
+                android:layout_marginEnd="45dp" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -70,9 +89,12 @@
                 android:text="Effacer"
                 android:id="@+id/btEffacer"
                 android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/btInscrire"
-                android:layout_toEndOf="@+id/btInscrire" />
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginRight="78dp"
+                android:layout_marginEnd="78dp" />
         </RelativeLayout>
 
     </LinearLayout>
+</ScrollView>
 </RelativeLayout>

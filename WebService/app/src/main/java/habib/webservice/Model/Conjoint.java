@@ -20,6 +20,16 @@ public class Conjoint
         this.metier=metier;
     }
 
+    public Conjoint(int cin,String nom,String prenom,String date_naissance)
+    {
+        this.cin=cin;
+        this.nom=nom;
+        this.prenom=prenom;
+        this.date_naissance=date_naissance;
+    }
+
+
+
     //getters
     public int getCin()
     {

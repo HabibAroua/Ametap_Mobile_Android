@@ -43,6 +43,7 @@ public class Login extends AppCompatActivity
 
                 Intent i=new Intent(Login.this,MainActivity.class);
                 startActivity(i);
+
             }
         });
 
@@ -51,20 +52,22 @@ public class Login extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-               JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.8:88/Ametap/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
+                JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.8:88/Ametap/DataOperation/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
                         ,new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response)
                     {
-                      try
+                        try
                         {
-                           login = response.getString("login");
+                            login = response.getString("login");
                             mot_de_passe=response.getString("password");
                             Toast.makeText(Login.this, login+" "+mot_de_passe, Toast.LENGTH_SHORT).show();
                             Intent i=new Intent(Login.this,Navigation.class);
-                            i.putExtra("value",email.getText().toString());
+                            i.putExtra("value1",email.getText().toString());
+                            i.putExtra("value2",password.getText().toString());
                             startActivity(i);
+                            finish();
                         }
                         catch(JSONException ex)
                         {

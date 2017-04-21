@@ -41,8 +41,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         holder.date_fin.setText(arrayList.get(position).getDate_fin());
         holder.prix_unitaire.setText(arrayList.get(position).getPrix_unitaire()+" DT");
         holder.nom_organisateur.setText(arrayList.get(position).getOrganisateur());
-
-
     }
 
     @Override
@@ -54,7 +52,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public static class MyViewHolder extends RecyclerView.ViewHolder
     {
         TextView id,nom_activite,date_debut,date_fin,prix_unitaire,nom_organisateur;
-
         public MyViewHolder(View itemView)
         {
             super(itemView);

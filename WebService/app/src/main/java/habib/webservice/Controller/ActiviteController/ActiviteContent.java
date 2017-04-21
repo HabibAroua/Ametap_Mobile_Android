@@ -1,9 +1,8 @@
-package habib.webservice.Fragemnts;
+package habib.webservice.Controller.ActiviteController;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import habib.webservice.Controller.ActiviteService;
 import habib.webservice.Model.Activite;
 
 /**

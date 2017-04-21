@@ -15,8 +15,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import habib.webservice.Controller.ActiviteAdapter;
-import habib.webservice.Controller.ActiviteService;
+import habib.webservice.Controller.ActiviteController.ActiviteAdapter;
+import habib.webservice.Controller.ActiviteController.ActiviteContent;
+import habib.webservice.Controller.ActiviteController.ActiviteService;
 import habib.webservice.Model.Activite;
 import habib.webservice.R;
 
@@ -27,7 +28,7 @@ public class ListDesActivite extends Fragment
 {
     ListView listView;
     ArrayAdapter<String>adapter;
-    public String adresse="http://192.168.1.8:88/Ametap/Activite.php";
+    public String adresse="http://192.168.1.133:88/Ametap/Activite.php";
     InputStream is=null;
     String line=null;
     String result=null;
@@ -64,15 +65,6 @@ public class ListDesActivite extends Fragment
         {
 
         }
-        btDemander=(Button)v.findViewById(R.id.btDemander);
-        btDemander.setOnClickListener(new View.OnClickListener()
-        {
-            public void onClick(View v)
-            {
-
-            }
-        });
-
         return v;
     }
 }

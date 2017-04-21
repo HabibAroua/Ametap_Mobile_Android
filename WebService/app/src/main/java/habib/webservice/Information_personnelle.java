@@ -1,14 +1,13 @@
 package habib.webservice;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import habib.webservice.Fragemnts.Ajouter_Conjoint;
-import habib.webservice.Fragemnts.ajouter_Enfant;
+import habib.webservice.Fragemnts.ModifierConjoint;
 
 
 public class Information_personnelle extends Fragment
@@ -30,11 +29,11 @@ public class Information_personnelle extends Fragment
         {
             public void onClick(View v)
             {
-                FragmentManager fragmentManager =getFragmentManager();
+                //FragmentManager fragmentManager =getFragmentManager();
 
-                fragmentManager.beginTransaction().replace(R.id.content,new ajouter_Enfant()).commit();
+                //fragmentManager.beginTransaction().replace(R.id.content,new ModifierConjoint()).commit();
 
-                //getFragmentManager().beginTransaction().replace(R.id.drawer_layout,new ajouter_Enfant()).commit();
+                getFragmentManager().beginTransaction().replace(R.id.drawer_layout,new ModifierConjoint()).commit();
             }
         });
 

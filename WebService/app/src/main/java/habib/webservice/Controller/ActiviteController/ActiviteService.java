@@ -1,4 +1,4 @@
-package habib.webservice.Controller;
+package habib.webservice.Controller.ActiviteController;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;
@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import habib.webservice.Controller.IpAdresse;
 import habib.webservice.Model.Activite;
 
 /**
@@ -25,7 +26,8 @@ public class ActiviteService
 {
     ListView listView;
     ArrayAdapter<String> adapter;
-    public String adresse="http://192.168.1.8:88/Ametap/Activite.php";
+    IpAdresse ipAdresse=new IpAdresse();
+    public String adresse=ipAdresse.getIpAdresse()+"Ametap/Model/Activite.php";
     InputStream is=null;
     String line=null;
     String result=null;
@@ -34,7 +36,6 @@ public class ActiviteService
     public ActiviteService(Context v)
     {
         //adapter=new ArrayAdapter<String>(getContext(), R.layout.row_item);
-
     }
     public ActiviteService()
     {}

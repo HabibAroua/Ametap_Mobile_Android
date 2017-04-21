@@ -24,11 +24,14 @@ import java.util.List;
 
 import habib.webservice.Fragemnts.Historique_des_activites;
 import habib.webservice.Fragemnts.ListDesActivite;
+import habib.webservice.Fragemnts.ModifierConjoint;
+import habib.webservice.Fragemnts.ModifierEnfant;
+import habib.webservice.Fragemnts.ModifierInfoPers;
 import habib.webservice.Fragemnts.ajouter_Enfant;
 
 public class Navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
-    public static String LoginValue;
+    public static String LoginValue ,PasswordValue;
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -58,7 +61,8 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         Intent i=getIntent();
-        LoginValue= i.getStringExtra("value");
+        LoginValue= i.getStringExtra("value1");
+        PasswordValue=i.getStringExtra("value2");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         //setSupportActionBar(toolbar);
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -74,6 +78,9 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         adapter.addFragment(new ListDesActivite(), "");
         adapter.addFragment(new ajouter_Enfant(), "");
         adapter.addFragment(new Historique_des_activites(), "");
+        adapter.addFragment(new ModifierConjoint(),"");
+        adapter.addFragment(new ModifierEnfant(),"");
+        adapter.addFragment(new ModifierInfoPers(),"");
         viewPager.setAdapter(adapter);
     }
 
@@ -215,5 +222,3 @@ class ViewPagerAdapter extends FragmentPagerAdapter
     }
 
 }
-
-
