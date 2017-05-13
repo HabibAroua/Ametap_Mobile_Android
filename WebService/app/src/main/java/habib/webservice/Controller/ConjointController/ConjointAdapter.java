@@ -1,18 +1,23 @@
 package habib.webservice.Controller.ConjointController;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import habib.webservice.Model.Conjoint;
-import habib.webservice.Navigation;
+import habib.webservice.Activity.Navigation;
 import habib.webservice.R;
 
 /**
@@ -22,7 +27,7 @@ public class ConjointAdapter extends ArrayAdapter<Conjoint>
 {
     Context context;
     int resource;
-
+      EditText date_naissance;
     public ConjointAdapter(Context context, int resource, List<Conjoint> membre)
     {
         super(context, resource, membre);
@@ -38,7 +43,16 @@ public class ConjointAdapter extends ArrayAdapter<Conjoint>
         final EditText cin=(EditText)view.findViewById(R.id.ConjointCin);
         final EditText nom =(EditText)view.findViewById(R.id.ConjointNom);
         final EditText prenom=(EditText)view.findViewById(R.id.conjointPrenom);
-        final EditText date_naissance=(EditText) view.findViewById(R.id.conjointDateNaissance);
+        date_naissance=(EditText) view.findViewById(R.id.conjointDateNaissance);
+       // date_naissance.setOnClickListener(new View.OnClickListener()
+        //{
+          //  public void onClick(View v)
+            //{
+              //  new DatePickerDialog(getContext(), date, myCalendar
+                //        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                  //      myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            //}
+        //});
         final EditText metier=(EditText)view.findViewById(R.id.conjointMetier);
         Button btModifier=(Button)view.findViewById(R.id.btModifierConjoint);
         Button btAnuller=(Button)view.findViewById(R.id.btAnnulerModifConjoint);
@@ -72,5 +86,28 @@ public class ConjointAdapter extends ArrayAdapter<Conjoint>
         });
         return view;
     }
+    Calendar myCalendar = Calendar.getInstance();
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        }
+        private void updateLabel() {
+
+            String myFormat = "MM/dd/yy"; //In which you need put here
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.FRANCE);
+
+            date_naissance.setText(sdf.format(myCalendar.getTime()));
+        }
+
+    };
+
 }
 

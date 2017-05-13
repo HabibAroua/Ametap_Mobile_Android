@@ -1,4 +1,4 @@
-package habib.webservice;
+package habib.webservice.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,12 +22,12 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import habib.webservice.Fragemnts.AfficheNotif;
 import habib.webservice.Fragemnts.Historique_des_activites;
+import habib.webservice.Fragemnts.Information_personnelle;
 import habib.webservice.Fragemnts.ListDesActivite;
-import habib.webservice.Fragemnts.ModifierConjoint;
-import habib.webservice.Fragemnts.ModifierEnfant;
-import habib.webservice.Fragemnts.ModifierInfoPers;
-import habib.webservice.Fragemnts.ajouter_Enfant;
+import habib.webservice.Fragemnts.Participer_activite;
+import habib.webservice.R;
 
 public class Navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
 {
@@ -76,11 +76,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ListDesActivite(), "");
-        adapter.addFragment(new ajouter_Enfant(), "");
-        adapter.addFragment(new Historique_des_activites(), "");
-        adapter.addFragment(new ModifierConjoint(),"");
-        adapter.addFragment(new ModifierEnfant(),"");
-        adapter.addFragment(new ModifierInfoPers(),"");
+        adapter.addFragment(new AfficheNotif(),"");
         viewPager.setAdapter(adapter);
     }
 
@@ -157,6 +153,9 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         else
         if (id == R.id.nav_manage)
         {
+            Intent i=new Intent(Navigation.this,Information_Personnel.class);
+            startActivity(i);
+
 
 
         }
@@ -168,10 +167,16 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void toLogin()
+    {
+        Intent i=new Intent(Navigation.this,Login.class);
+
+        startActivity(i);
     }
 
 
@@ -183,42 +188,36 @@ class ViewPagerAdapter extends FragmentPagerAdapter
     private final List<Fragment> mFragmentList = new ArrayList<>();
 
     private final List<String> mFragmentTitleList = new ArrayList<>();
-    public ViewPagerAdapter(FragmentManager manager) {
-
+    public ViewPagerAdapter(FragmentManager manager)
+    {
         super(manager);
-
     }
 
     @Override
 
-    public Fragment getItem(int position) {
-
+    public Fragment getItem(int position)
+    {
         return mFragmentList.get(position);
-
     }
 
     @Override
 
-    public int getCount() {
-
+    public int getCount()
+    {
         return mFragmentList.size();
-
     }
 
-    public void addFragment(Fragment fragment, String title) {
-
+    public void addFragment(Fragment fragment, String title)
+    {
         mFragmentList.add(fragment);
-
         mFragmentTitleList.add(title);
-
     }
-
     @Override
 
-    public CharSequence getPageTitle(int position) {
-
+    public CharSequence getPageTitle(int position)
+    {
         return mFragmentTitleList.get(position);
-
     }
+
 
 }

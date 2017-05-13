@@ -1,6 +1,7 @@
 package habib.webservice.Fragemnts;
 
 
+import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
 import java.net.UnknownHostException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
+import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.EnfantController.EnfantService;
-import habib.webservice.Navigation;
 import habib.webservice.R;
 
 /**
@@ -42,6 +47,15 @@ public class ajouter_Enfant extends Fragment
         nom=(EditText)view.findViewById(R.id.txtNomEnfant);
         prenom=(EditText)view.findViewById(R.id.txtPrenomEnfant);
         date_naissance=(EditText)view.findViewById(R.id.txtDate_naissanceEnfant);
+        date_naissance.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                new DatePickerDialog(getContext(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
         ecole=(EditText)view.findViewById(R.id.txtEcoleEnfant);
         btAjouterEnfant=(Button)view.findViewById(R.id.btAjouterEnfant);
         btAjouterEnfant.setOnClickListener
@@ -104,4 +118,28 @@ public class ajouter_Enfant extends Fragment
                 );
         return view;
     }
+
+    Calendar myCalendar = Calendar.getInstance();
+
+    DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+
+        @Override
+        public void onDateSet(DatePicker view, int year, int monthOfYear,
+                              int dayOfMonth) {
+            // TODO Auto-generated method stub
+            myCalendar.set(Calendar.YEAR, year);
+            myCalendar.set(Calendar.MONTH, monthOfYear);
+            myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            updateLabel();
+        }
+        private void updateLabel() {
+
+            String myFormat = "MM/dd/yy"; //In which you need put here
+            SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
+
+            date_naissance.setText(sdf.format(myCalendar.getTime()));
+        }
+
+    };
+
 }

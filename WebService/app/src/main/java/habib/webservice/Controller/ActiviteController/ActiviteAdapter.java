@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
+import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.ParticipationController.ParticipationService;
-import habib.webservice.Information_personnelle;
+import habib.webservice.Fragemnts.Information_personnelle;
 import habib.webservice.Model.Activite;
-import habib.webservice.Navigation;
 import habib.webservice.R;
 
 /**
@@ -44,6 +45,7 @@ public class ActiviteAdapter extends ArrayAdapter<Activite>
         TextView prix_unitaire=(TextView)view.findViewById(R.id.viewPrixUnitaire);
         TextView nom_organisateur=(TextView)view.findViewById(R.id.viewNomOrganisateur);
         Button btDemander=(Button)view.findViewById(R.id.btDemander);
+
         id.setText(getItem(position).getId()+" ");
         nomActivite.setText(getItem(position).getNom_activite());
         date_debut.setText(getItem(position).getDate_debut());
@@ -58,9 +60,19 @@ public class ActiviteAdapter extends ArrayAdapter<Activite>
                 ParticipationService participationService=new ParticipationService();
                 Navigation n=new Navigation();
                 String login=n.LoginValue;
-                participationService.AjouterEnfant(login,id.getText().toString(),getContext());
+                participationService.ParticipationAdherent(login,id.getText().toString(),getContext());
                 //participationService.Message(getContext());
                 //Toast.makeText(getContext(),"Votre demande a été envoyé avec succés !", Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button btDemandeActivitePourConjoint=(Button)view.findViewById(R.id.btDemanderActivitePourConjoint);
+        btDemandeActivitePourConjoint.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Navigation n=new Navigation();
+                String login=n.LoginValue;
+                Toast.makeText(view.getContext(),"Hello",Toast.LENGTH_SHORT).show();
             }
         });
 

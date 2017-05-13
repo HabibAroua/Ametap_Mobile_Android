@@ -27,7 +27,7 @@ import java.util.Map;
 import habib.webservice.Controller.IpAdresse;
 import habib.webservice.Controller.MySingleton;
 import habib.webservice.Model.Conjoint;
-import habib.webservice.Navigation;
+import habib.webservice.Activity.Navigation;
 
 /**
  * Created by lenovo on 29/03/2017.

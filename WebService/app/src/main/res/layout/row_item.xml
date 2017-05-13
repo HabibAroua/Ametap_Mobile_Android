@@ -96,7 +96,8 @@
         android:layout_below="@+id/viewDateDebut"
         android:layout_toEndOf="@+id/viewID"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:clickable="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -139,5 +140,17 @@
         android:layout_below="@+id/viewNomOrganisateur"
         android:layout_alignLeft="@+id/textView16"
         android:layout_alignStart="@+id/textView16" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Demander cette activité pour conjoint"
+        android:id="@+id/btDemanderActivitePourConjoint"
+        android:layout_below="@+id/btDemander"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="true" />
 
 </RelativeLayout>

@@ -11,8 +11,6 @@ public class IpAdresse
     }
     public String getIpAdresse()
     {
-        return "http://192.168.1.8:88/";
+        return "http://192.168.1.88:88/";
     }
-
-
 }

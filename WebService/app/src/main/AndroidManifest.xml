@@ -4,28 +4,40 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_logo_ame"
         android:label="@string/application_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Activity.Authentification">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".Login" />
-        <activity android:name=".Menu" />
-        <activity android:name=".Demander_stage" />
+        <activity android:name=".Activity.MainActivity" />
+        <activity android:name=".Activity.Login" />
+        <activity android:name=".Activity.Menu" />
         <activity
-            android:name=".Navigation"
+            android:name=".Activity.Navigation"
             android:label="@string/title_activity_navigation"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Information_personnel"></activity>
+        <activity
+            android:name=".Activity.Navigation."
+            android:label="@string/title_activity_login" />
+        <activity android:name=".Activity.SplashScreen" />
+        <activity
+            android:name=".Activity.Information_Personnel"
+            android:label="@string/title_activity_information__personnel"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Activity.ModifierConjoint"></activity>
     </application>
 
 </manifest>

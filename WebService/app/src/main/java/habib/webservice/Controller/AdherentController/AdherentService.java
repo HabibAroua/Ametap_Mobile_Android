@@ -20,9 +20,9 @@ import java.util.Map;
 
 import habib.webservice.Controller.IpAdresse;
 import habib.webservice.Controller.MySingleton;
-import habib.webservice.Login;
-import habib.webservice.MainActivity;
-import habib.webservice.Navigation;
+import habib.webservice.Activity.Login;
+import habib.webservice.Activity.MainActivity;
+import habib.webservice.Activity.Navigation;
 
 /**
  * Created by lenovo on 29/03/2017.

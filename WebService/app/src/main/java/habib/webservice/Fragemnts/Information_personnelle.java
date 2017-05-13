@@ -1,4 +1,4 @@
-package habib.webservice;
+package habib.webservice.Fragemnts;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -6,8 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import habib.webservice.Fragemnts.Ajouter_Conjoint;
-import habib.webservice.Fragemnts.ModifierConjoint;
+import habib.webservice.R;
 
 
 public class Information_personnelle extends Fragment

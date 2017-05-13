@@ -1,4 +1,4 @@
-package habib.webservice;
+package habib.webservice.Activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import habib.webservice.Controller.AdherentController.AdherentService;
+import habib.webservice.R;
 
 public class MainActivity extends AppCompatActivity
 {

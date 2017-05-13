@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/bleuciel"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="habib.webservice.Demander_stage">
+    tools:context=".Activity.Demander_stage">
 
     <TextView
         android:layout_width="wrap_content"

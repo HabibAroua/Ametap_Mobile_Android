@@ -12,7 +12,7 @@ import android.widget.ListView;
 import habib.webservice.Controller.ActiviteController.ActiviteService;
 import habib.webservice.Controller.EnfantController.EnfantAdapter;
 import habib.webservice.Controller.EnfantController.EnfantContent;
-import habib.webservice.Navigation;
+import habib.webservice.Activity.Navigation;
 import habib.webservice.R;
 
 /**

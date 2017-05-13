@@ -11,6 +11,23 @@ public class Participation
     private String notif;
     private int matriculePart;
     private int idActivite;
+    private String Nom_Activite;
+
+    public Participation(String notif,String Nom_Activite)
+    {
+        this.notif=notif;
+        this.Nom_Activite=Nom_Activite;
+    }
+
+    public String getNom_Activite()
+    {
+        return  this.Nom_Activite;
+    }
+
+    public void setNom_Activite(String Nom_Activite)
+    {
+        this.Nom_Activite=Nom_Activite;
+    }
 
     public Participation(int id,String date_part,int etat,String notif,int matriculePart,int idActivite)
     {

@@ -1,4 +1,4 @@
-package habib.webservice;
+package habib.webservice.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,14 +8,18 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import habib.webservice.Controller.IpAdresse;
 import habib.webservice.Controller.MySingleton;
+import habib.webservice.R;
 
 public class Login extends AppCompatActivity
 {
@@ -50,7 +54,8 @@ public class Login extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,"http://192.168.1.8:88/Ametap/DataOperation/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
+                IpAdresse ipAdresse=new IpAdresse();
+                JsonObjectRequest jsonObjectRequest =new JsonObjectRequest(Request.Method.POST ,ipAdresse.getIpAdresse()+"Ametap/DataOperation/AdherentISExist.php?login="+email.getText().toString()+"&password="+password.getText().toString()+"",(String)null
                         ,new Response.Listener<JSONObject>() {
 
                     @Override

@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 
-import habib.webservice.Navigation;
+import habib.webservice.Activity.Navigation;
 import habib.webservice.R;
 
 /**
