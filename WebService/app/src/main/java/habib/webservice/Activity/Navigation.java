@@ -1,6 +1,11 @@
 package habib.webservice.Activity;
 
+import android.annotation.TargetApi;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -35,6 +40,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -70,6 +76,22 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        Intent intent=new Intent();
+        PendingIntent pIntent=PendingIntent.getActivity(Navigation.this,0,intent,0);
+        Notification  notification;
+        notification = new Notification.Builder(Navigation.this)
+                .setTicker("")
+                .setContentTitle("Activite")
+                .setContentText("Accepter au nouveau activite")
+                .setSmallIcon(R.drawable.ic_ame_inscr)
+                .setContentIntent(pIntent)
+                .getNotification();
+
+        notification.flags=Notification.FLAG_AUTO_CANCEL;
+        NotificationManager nm= (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        nm.notify(0,notification);
+
     }
 
     private void setupViewPager(ViewPager viewPager)
