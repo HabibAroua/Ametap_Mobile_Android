@@ -16,8 +16,8 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 
-import habib.webservice.Model.Conjoint;
 import habib.webservice.Activity.Navigation;
+import habib.webservice.Model.Conjoint;
 import habib.webservice.R;
 
 /**
@@ -69,7 +69,7 @@ public class ConjointAdapter extends ArrayAdapter<Conjoint>
                 Navigation n=new Navigation();
                 Toast.makeText(getContext(),"Login :"+n.LoginValue,Toast.LENGTH_SHORT).show();
                 ConjointService conjointService=new ConjointService();
-                conjointService.modifierConjoint(cin.getText().toString(),nom.getText().toString(),prenom.getText().toString(),date_naissance.getText().toString(),metier.getText().toString(),n.LoginValue,getContext());
+                conjointService.modifierConjoint(cin.getText().toString(),nom.getText().toString(),prenom.getText().toString(),date_naissance.getText().toString(),metier.getText().toString(),n.LoginValue, getContext());
             }
         });
 

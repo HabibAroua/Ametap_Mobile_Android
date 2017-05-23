@@ -1,5 +1,6 @@
 package habib.webservice.Controller.AdherentController;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
@@ -18,11 +19,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import habib.webservice.Activity.Login;
+import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.IpAdresse;
 import habib.webservice.Controller.MySingleton;
-import habib.webservice.Activity.Login;
-import habib.webservice.Activity.MainActivity;
-import habib.webservice.Activity.Navigation;
 
 /**
  * Created by lenovo on 29/03/2017.
@@ -41,7 +41,7 @@ public class AdherentService
         return "http://192.168.43.212:88/";
     }
 
-    public void inscription(String matricule,String login , String password  ,final MainActivity c)
+    public void inscription(String matricule,String login , String password  ,final Context c)
     {
         IpAdresse ipAdresse = new IpAdresse();
         final String myMatricule, myLogin, myPassword;
@@ -85,6 +85,52 @@ public class AdherentService
         };
         MySingleton.getInstance(c).addTorequestique(stringRequest);
     }
+
+    public void modifierInfoPersonnel(String oldLogin,String newLogin,String newPassword  ,final Context c)
+    {
+        IpAdresse ipAdresse = new IpAdresse();
+        final String myOldLogin, myNewLogin, myNewPassword;
+        myOldLogin = oldLogin;
+        myNewLogin = newLogin;
+        myNewPassword = newPassword;
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ipAdresse.getIpAdresse() + "Ametap/DataOperation/ModifierInfoAdherent.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        builder.setTitle("Server response");
+                        builder.setMessage("Response :" + response);
+                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which)
+                            {
+                                //situation.setText("");
+                            }
+                        });
+                        AlertDialog alertDialog = builder.create();
+                        alertDialog.show();
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        error.printStackTrace();
+                        Toast.makeText(c,"Erreur",Toast.LENGTH_SHORT).show();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("oldLogin", myOldLogin);
+                params.put("newLogin", myNewLogin);
+                params.put("newPassword", myNewPassword);
+                return params;
+            }
+        };
+        MySingleton.getInstance(c).addTorequestique(stringRequest);
+    }
+
 
 
 
