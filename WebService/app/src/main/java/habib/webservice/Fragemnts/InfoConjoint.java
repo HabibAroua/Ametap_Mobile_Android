@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -37,6 +38,23 @@ public class InfoConjoint extends Fragment
         listView = (ListView) v.findViewById(R.id.listInfoConjoint);
         ConjointInfoAdapter adapterInfo=new ConjointInfoAdapter(getContext(), R.layout.row_item4, ConjointContent.getConjoint(n.LoginValue));
         listView.setAdapter(adapterInfo);
+        listView.setOnItemClickListener
+                (
+                        new AdapterView.OnItemClickListener()
+                        {
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+                            {
+                                if(id==0)
+                                {
+                             //       ModifierConjoint modifierConjoint=new ModifierConjoint();
+                               //     android.support.v4.app.FragmentTransaction fragmentTransation=getFragmentManager().beginTransaction();
+                                 //   fragmentTransation.replace(R.id.actInfoPersonnel,modifierConjoint);
+                                   // fragmentTransation.commit();
+                                }
+                            }
+                        }
+                );
         //btModifier.setOnClickListener(new View.OnClickListener()
         //{
           //  public void onClick(View v)

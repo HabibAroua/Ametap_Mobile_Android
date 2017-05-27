@@ -1,10 +1,12 @@
 package habib.webservice.Controller.ConjointController;
 
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,6 +21,8 @@ import habib.webservice.R;
 public class ConjointInfoAdapter  extends ArrayAdapter<Conjoint>
 
     {
+        AppCompatActivity a;
+        Button btModif;
         Context context;
         int resource;
         EditText date_naissance;
@@ -41,7 +45,6 @@ public class ConjointInfoAdapter  extends ArrayAdapter<Conjoint>
             prenom.setText(getItem(position).getPrenom());
             date_naissance.setText(getItem(position).getPrenom());
             date_naissance.setText(getItem(position).getDate_naissance());
-
 
              return view;
         }

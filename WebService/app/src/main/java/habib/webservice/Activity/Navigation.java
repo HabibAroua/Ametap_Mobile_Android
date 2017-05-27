@@ -28,10 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import habib.webservice.Fragemnts.AfficheNotif;
-import habib.webservice.Fragemnts.Historique_des_activites;
-import habib.webservice.Fragemnts.Information_personnelle;
 import habib.webservice.Fragemnts.ListDesActivite;
-import habib.webservice.Fragemnts.Participer_activite;
 import habib.webservice.R;
 
 public class Navigation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener
@@ -149,34 +146,24 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         FragmentManager fragmentManager =getSupportFragmentManager();
         if (id == R.id.nav_camera)
         {
-            fragmentManager.beginTransaction().replace(R.id.content,new Information_personnelle()).commit();
-            //fragmentManager.beginTransaction().replace(R.id.content,new ajouter_Enfant()).commit();
-            //fragmentManager.beginTransaction().replace(R.id.content,new Ajouter_Conjoint()).commit();
-
-            // Handle the camera action
-            //getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Information_personnelle()
-            //).commit();
-            //98 959 991
-
+            Intent i=new Intent(Navigation.this,Information_Personnel.class);
+            startActivity(i);
         }
         else
         if (id == R.id.nav_gallery)
         {
-            fragmentManager.beginTransaction().replace(R.id.content,new Historique_des_activites()).commit();
-            //getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Historique_des_activites()
-            //).commit();
+
         }
         else
-        if (id == R.id.nav_slideshow)
+        if (id == 0)
         {
-            getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Participer_activite()
-            ).commit();
+            //getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Participer_activite()
+            //).commit();
         }
         else
         if (id == R.id.nav_manage)
         {
-            Intent i=new Intent(Navigation.this,Information_Personnel.class);
-            startActivity(i);
+
 
 
 

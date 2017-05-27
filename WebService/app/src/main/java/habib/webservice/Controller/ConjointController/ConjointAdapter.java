@@ -44,15 +44,15 @@ public class ConjointAdapter extends ArrayAdapter<Conjoint>
         final EditText nom =(EditText)view.findViewById(R.id.ConjointNom);
         final EditText prenom=(EditText)view.findViewById(R.id.conjointPrenom);
         date_naissance=(EditText) view.findViewById(R.id.conjointDateNaissance);
-       // date_naissance.setOnClickListener(new View.OnClickListener()
-        //{
-          //  public void onClick(View v)
-            //{
-              //  new DatePickerDialog(getContext(), date, myCalendar
-                //        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
-                  //      myCalendar.get(Calendar.DAY_OF_MONTH)).show();
-            //}
-        //});
+        date_naissance.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                new DatePickerDialog(getContext(), date, myCalendar
+                        .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
+                        myCalendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
         final EditText metier=(EditText)view.findViewById(R.id.conjointMetier);
         Button btModifier=(Button)view.findViewById(R.id.btModifierConjoint);
         Button btAnuller=(Button)view.findViewById(R.id.btAnnulerModifConjoint);

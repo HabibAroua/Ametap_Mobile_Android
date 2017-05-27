@@ -12,7 +12,7 @@ public class ModifierConjoint extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modifier_conjoint);
-        getSupportFragmentManager().beginTransaction().add(R.id.activityModifierConjoint, new habib.webservice.Fragemnts.ModifierConjoint()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.activityModifierEnfant, new habib.webservice.Fragemnts.ModifierEnfant()).commit();
 
     }
 }

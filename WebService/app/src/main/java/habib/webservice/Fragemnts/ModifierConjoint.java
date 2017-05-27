@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import habib.webservice.Controller.ActiviteController.ActiviteService;
@@ -18,7 +19,7 @@ import habib.webservice.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ModifierConjoint extends Fragment {
+public class ModifierConjoint extends Fragment implements AdapterView.OnItemClickListener {
 ListView listView;
 
     public ModifierConjoint() {
@@ -49,6 +50,7 @@ ListView listView;
             listView = (ListView) v.findViewById(R.id.listConjoint);
             ConjointAdapter adapter = new ConjointAdapter(getContext(), R.layout.row_item1, ConjointContent.getConjoint(n.LoginValue));
             listView.setAdapter(adapter);
+
         //}
         //catch(Exception e)
        //{
@@ -57,4 +59,8 @@ ListView listView;
         return v;
     }
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+    }
 }

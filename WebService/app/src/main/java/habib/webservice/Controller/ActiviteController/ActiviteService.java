@@ -27,7 +27,7 @@ public class ActiviteService
     ListView listView;
     ArrayAdapter<String> adapter;
     IpAdresse ipAdresse=new IpAdresse();
-    public String adresse=ipAdresse.getIpAdresse()+"Ametap/Model/Activite.php";
+    public String adresse=ipAdresse.getIpAdresse()+"Ametap/DataOperation/AfficherActiviteActuel.php";
     InputStream is=null;
     String line=null;
     String result=null;

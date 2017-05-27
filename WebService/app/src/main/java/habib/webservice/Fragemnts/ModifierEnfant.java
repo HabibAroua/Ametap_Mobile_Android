@@ -9,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.ActiviteController.ActiviteService;
 import habib.webservice.Controller.EnfantController.EnfantAdapter;
 import habib.webservice.Controller.EnfantController.EnfantContent;
-import habib.webservice.Activity.Navigation;
 import habib.webservice.R;
 
 /**
@@ -40,6 +40,7 @@ public class ModifierEnfant extends Fragment
         listView = (ListView) v.findViewById(R.id.listEnfant);
         EnfantAdapter adapter = new EnfantAdapter(getContext(), R.layout.row_item2, EnfantContent.getEnfant(n.LoginValue));
         listView.setAdapter(adapter);
+
 
         return v;
     }

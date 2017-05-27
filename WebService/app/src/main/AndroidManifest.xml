@@ -37,7 +37,8 @@
             android:name=".Activity.Information_Personnel"
             android:label="@string/title_activity_information__personnel"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Activity.ModifierConjoint"></activity>
+        <activity android:name=".Activity.ModifierConjoint" />
+        <activity android:name=".Activity.ModifierEnfant"></activity>
     </application>
 
 </manifest>
