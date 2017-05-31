@@ -50,7 +50,7 @@ public class Authentification extends AppCompatActivity
                         {
                             login = response.getString("login");
                             mot_de_passe=response.getString("password");
-                            Toast.makeText(Authentification.this, login+" "+mot_de_passe, Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(Authentification.this, login+" "+mot_de_passe, Toast.LENGTH_SHORT).show();
                             Intent i=new Intent(Authentification.this,Navigation.class);
                             i.putExtra("value1",log.getText().toString());
                             i.putExtra("value2",password.getText().toString());

@@ -184,11 +184,6 @@ public  class EnfantService
                                 dialog.dismiss();
 
                             }
-                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
                         });
                         AlertDialog alert = a_builder.create();
                         alert.setTitle("Alert");

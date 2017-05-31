@@ -26,6 +26,7 @@ public class ConjointInfoAdapter  extends ArrayAdapter<Conjoint>
         Context context;
         int resource;
         EditText date_naissance;
+        Button btModifier;
         public ConjointInfoAdapter(Context context, int resource, List<Conjoint > membre)
         {
             super(context, resource, membre);
@@ -41,10 +42,19 @@ public class ConjointInfoAdapter  extends ArrayAdapter<Conjoint>
            final TextView nom=(TextView) view.findViewById(R.id.viewNomConjoint);
             final TextView prenom= (TextView) view.findViewById(R.id.viewPrenomConjoint);
             final TextView date_naissance=(TextView)view.findViewById(R.id.viewDateNaissanceConjoint);
-            nom.setText(getItem(position).getNom() + " ");
+             nom.setText(getItem(position).getNom() + " ");
             prenom.setText(getItem(position).getPrenom());
             date_naissance.setText(getItem(position).getPrenom());
             date_naissance.setText(getItem(position).getDate_naissance());
+            nom.setOnClickListener(new View.OnClickListener()
+            {
+                public void onClick(View v)
+                {
+
+                }
+            });
+
+
 
              return view;
         }

@@ -15,8 +15,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import habib.webservice.Fragemnts.*;
-import habib.webservice.Fragemnts.ModifierEnfant;
+import habib.webservice.Fragemnts.InfoConjoint;
+import habib.webservice.Fragemnts.InfoEnfant;
+import habib.webservice.Fragemnts.ModifierInfoPers;
 import habib.webservice.R;
 
 public class Information_Personnel extends AppCompatActivity
@@ -27,10 +28,6 @@ public class Information_Personnel extends AppCompatActivity
     private int[] tabIcons = {
             R.drawable.info_pers_icon,
             R.drawable.ic_conjoint,
-            R.drawable.ic_conjoint,
-            R.drawable.ic_conjoint,
-            R.drawable.ic_enfant,
-            R.drawable.ic_enfant,
             R.drawable.ic_enfant
 
     };
@@ -76,10 +73,7 @@ public class Information_Personnel extends AppCompatActivity
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
-        tabLayout.getTabAt(3).setIcon(tabIcons[3]);
-        tabLayout.getTabAt(4).setIcon(tabIcons[4]);
-        tabLayout.getTabAt(5).setIcon(tabIcons[5]);
-        tabLayout.getTabAt(6).setIcon(tabIcons[6]);
+
     }
 
     private void setupViewPager(ViewPager viewPager)
@@ -87,11 +81,7 @@ public class Information_Personnel extends AppCompatActivity
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new ModifierInfoPers(), "");
         adapter.addFrag(new InfoConjoint(), "");
-        adapter.addFrag(new Ajouter_Conjoint(),"");
-        adapter.addFrag(new habib.webservice.Fragemnts.ModifierConjoint(),"");
         adapter.addFrag(new InfoEnfant(), "");
-        adapter.addFrag(new ajouter_Enfant(),"");
-        adapter.addFrag(new ModifierEnfant(),"");
         viewPager.setAdapter(adapter);
     }
 

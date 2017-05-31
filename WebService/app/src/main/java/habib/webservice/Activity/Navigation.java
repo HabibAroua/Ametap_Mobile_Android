@@ -27,6 +27,7 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import habib.webservice.Controller.AdherentController.AdherentService;
 import habib.webservice.Fragemnts.AfficheNotif;
 import habib.webservice.Fragemnts.ListDesActivite;
 import habib.webservice.R;
@@ -152,7 +153,9 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         else
         if (id == R.id.nav_gallery)
         {
-
+            Intent i=new Intent(Navigation.this,
+                    ModifierConjoint.class);
+            startActivity(i);
         }
         else
         if (id == 0)
@@ -168,9 +171,10 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
 
 
         }
-        else if (id == R.id.nav_share)
+        else if (id == R.id.nav_point)
         {
-
+            AdherentService adherentService=new AdherentService();
+            adherentService.getNombrePoint(LoginValue,Navigation.this);
         }
         else if (id == R.id.nav_send)
         {

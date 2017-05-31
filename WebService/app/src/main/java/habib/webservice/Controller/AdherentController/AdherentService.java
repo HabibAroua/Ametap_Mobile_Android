@@ -168,4 +168,53 @@ public class AdherentService
         MySingleton.getInstance(l).addTorequestique(jsonObjectRequest);
 
     }
+
+    public void getNombrePoint(String login,final Context c)
+    {
+        IpAdresse ipAdresse =new IpAdresse();
+        final String myLogin ;
+        myLogin = login;
+        StringRequest stringRequest = null;
+        stringRequest = new StringRequest(Request.Method.POST, ipAdresse.getIpAdresse()+"Ametap/DataOperation/afficheNombrePoint.php",
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response)
+                    {
+                        AlertDialog.Builder a_builder=new AlertDialog.Builder(c);
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
+                            }
+                        });
+                        AlertDialog alert=a_builder.create();
+                        alert.setTitle("Alert");
+                        alert.show();
+                    }
+                }
+                ,
+                new Response.ErrorListener()
+                {
+                    @Override
+                    public void onErrorResponse(VolleyError error)
+                    {
+                        error.printStackTrace();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError
+            {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("login",myLogin);
+                return params;
+            }
+        };
+
+        Navigation n=new Navigation();
+        MySingleton.getInstance(n).addTorequestique(stringRequest);
+    }
+
+
 }

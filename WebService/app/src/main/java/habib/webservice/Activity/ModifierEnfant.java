@@ -10,8 +10,9 @@ public class ModifierEnfant extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getSupportFragmentManager().beginTransaction().add(R.id.activityModifierConjoint, new habib.webservice.Fragemnts.ModifierConjoint()).commit();
         setContentView(R.layout.activity_modifier_enfant);
-        getSupportFragmentManager().beginTransaction().add(R.id.activityModifierConjoint, new habib.webservice.Fragemnts.ModifierConjoint()).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.activityModifierEnfant, new habib.webservice.Fragemnts.ModifierEnfant()).commit();
 
     }
 }

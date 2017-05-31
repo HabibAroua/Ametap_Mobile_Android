@@ -1,6 +1,7 @@
 package habib.webservice.Fragemnts;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import habib.webservice.Activity.MenuEnfant;
 import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.EnfantController.EnfantContent;
 import habib.webservice.Controller.EnfantController.EnfantInfoAdapter;
@@ -44,11 +46,8 @@ ListView listView;
                             @Override
                             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
                             {
-                               // if(id==1)
-                         //       {
-                           //         Toast.makeText(getContext(), "Erreur", Toast.LENGTH_SHORT).show();
-                                    //getFragmentManager().beginTransaction().replace(R.id.actInfoPersonnel,new ModifierConjoint()
-                                    //).commit();
+                                Intent i=new Intent(getActivity(), MenuEnfant.class);
+                                startActivity(i);
                             }
                         }
                 );
