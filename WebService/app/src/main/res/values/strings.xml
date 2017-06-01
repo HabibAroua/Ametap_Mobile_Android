@@ -117,5 +117,6 @@
         "when a user tries to pick up one of cards.\n\n"
     </string>
     <string name="title_activity_information__personnel">Information_Personnel</string>
+    <string name="demander_une_activit">Demander une activité</string>
 
 </resources>

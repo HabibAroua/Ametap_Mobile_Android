@@ -22,6 +22,7 @@ public class ActiviteContent
         List<String>date_fin=new ArrayList<>();
         List<Double>prix_unitaire=new ArrayList<>();
         List<String>nom_organisateur=new ArrayList<>();
+        List<String>date_fin_inscription=new ArrayList<>();
         for(int i=0;i<list.size();i++)
         {
             Ids.add(list.get(i).getId());
@@ -30,11 +31,15 @@ public class ActiviteContent
             date_fin.add(list.get(i).getDate_fin());
             prix_unitaire.add(list.get(i).getPrix_unitaire());
             nom_organisateur.add(list.get(i).getOrganisateur());
+            date_fin_inscription.add(list.get(i).getDate_fin_inscription());
+            //Toast.makeText((Context) getActivites(),""+list.get(i).getDate_fin_inscription(),Toast.LENGTH_SHORT).show();
+
         }
         List<Activite>Activites=new ArrayList<Activite>();
         for(int i=0;i<Ids.size();i++)
         {
-            Activites.add(new Activite(Ids.get(i),nomActivite.get(i),date_debut.get(i),date_fin.get(i),prix_unitaire.get(i),nom_organisateur.get(i)));
+            Activites.add(new Activite(Ids.get(i),nomActivite.get(i),date_debut.get(i),date_fin.get(i),prix_unitaire.get(i),nom_organisateur.get(i),date_fin_inscription.get(i)));
+            System.out.println("la date "+date_fin_inscription.get(i));
         }
         return Activites;
     }

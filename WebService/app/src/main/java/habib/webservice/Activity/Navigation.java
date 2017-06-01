@@ -29,6 +29,7 @@ import java.util.List;
 
 import habib.webservice.Controller.AdherentController.AdherentService;
 import habib.webservice.Fragemnts.AfficheNotif;
+import habib.webservice.Fragemnts.Historique_des_activites;
 import habib.webservice.Fragemnts.ListDesActivite;
 import habib.webservice.R;
 
@@ -153,8 +154,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         else
         if (id == R.id.nav_gallery)
         {
-            Intent i=new Intent(Navigation.this,
-                    ModifierConjoint.class);
+            Intent i=new Intent(Navigation.this,HistoriqueActivite.class);
             startActivity(i);
         }
         else

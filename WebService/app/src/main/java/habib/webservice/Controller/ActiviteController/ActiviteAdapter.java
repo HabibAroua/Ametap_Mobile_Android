@@ -1,8 +1,6 @@
 package habib.webservice.Controller.ActiviteController;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,6 @@ import java.util.List;
 
 import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.ParticipationController.ParticipationService;
-import habib.webservice.Fragemnts.Information_personnelle;
 import habib.webservice.Model.Activite;
 import habib.webservice.R;
 
@@ -44,6 +41,7 @@ public class ActiviteAdapter extends ArrayAdapter<Activite>
         TextView date_fin=(TextView)view.findViewById(R.id.viewDateFin);
         TextView prix_unitaire=(TextView)view.findViewById(R.id.viewPrixUnitaire);
         TextView nom_organisateur=(TextView)view.findViewById(R.id.viewNomOrganisateur);
+        TextView date_fin_inscription=(TextView)view.findViewById(R.id.viewDate_fin_inscription);
         Button btDemander=(Button)view.findViewById(R.id.btDemander);
 
         id.setText(getItem(position).getId()+" ");
@@ -52,6 +50,8 @@ public class ActiviteAdapter extends ArrayAdapter<Activite>
         date_fin.setText(getItem(position).getDate_fin());
         prix_unitaire.setText((int)getItem(position).getPrix_unitaire()+" ");
         nom_organisateur.setText(getItem(position).getOrganisateur());
+        date_fin_inscription.setText("15/11/1994");
+
         btDemander.setOnClickListener(
                 new View.OnClickListener()
         {
@@ -79,26 +79,6 @@ public class ActiviteAdapter extends ArrayAdapter<Activite>
         return view;
     }
 }
- class myFragment extends android.support.v4.app.Fragment
-{
-    myFragment()
-    {
-        // Required empty public constructor
-    }
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState)
-    {
-        // Inflate the layout for this fragment
-        View view=inflater.inflate(R.layout.fragment_list_des_activite, container, false);
-        return view;
-    }
 
-    public void Entrer()
-    {
-        FragmentManager fragmentManager =getFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.drawer_layout,new Information_personnelle()).commit();
-    }
-}
 
 

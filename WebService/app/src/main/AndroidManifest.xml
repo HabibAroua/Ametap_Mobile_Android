@@ -42,7 +42,8 @@
         <activity android:name=".Activity.MenuConjoint" />
         <activity android:name=".Activity.MenuEnfant" />
         <activity android:name=".Activity.AjouterEnfant" />
-        <activity android:name=".Activity.AjouterConjoint"></activity>
+        <activity android:name=".Activity.AjouterConjoint" />
+        <activity android:name=".Activity.HistoriqueActivite"></activity>
     </application>
 
 </manifest>

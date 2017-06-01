@@ -32,7 +32,6 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="ID"
         android:id="@+id/viewID"
-        android:layout_alignBottom="@+id/btDemander"
         android:layout_toRightOf="@+id/textView13"
         android:layout_toEndOf="@+id/textView13"
         android:textColor="#f7f5f5" />
@@ -53,7 +52,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="Nom activité"
         android:id="@+id/viewNom_Activite"
-        android:layout_below="@+id/textView13"
+        android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/textView16"
         android:layout_toEndOf="@+id/textView16" />
 
@@ -64,8 +63,8 @@
             android:text="Date fin"
             android:id="@+id/viewDateFin"
         android:layout_below="@+id/viewNomOrganisateur"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/textView37"
+        android:layout_toEndOf="@+id/textView37" />
 
     <TextView
             android:layout_width="wrap_content"
@@ -86,18 +85,6 @@
         android:layout_below="@+id/viewPrixUnitaire"
         android:layout_alignLeft="@+id/viewPrixUnitaire"
         android:layout_alignStart="@+id/viewPrixUnitaire" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Demander une activité"
-        android:id="@+id/btDemander"
-        android:layout_weight="0.00"
-        android:layout_below="@+id/viewDateDebut"
-        android:layout_toEndOf="@+id/viewID"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:clickable="false" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -141,16 +128,47 @@
         android:layout_alignLeft="@+id/textView16"
         android:layout_alignStart="@+id/textView16" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Vous pouvez inscrire jusquà  "
+        android:id="@+id/textView37"
+        android:layout_below="@+id/viewDateDebut"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/viewDate_fin_inscription"
+        android:layout_below="@+id/viewDateFin"
+        android:layout_toRightOf="@+id/textView37"
+        android:layout_toEndOf="@+id/textView37" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Demander cette activité pour conjoint"
-        android:id="@+id/btDemanderActivitePourConjoint"
-        android:layout_below="@+id/btDemander"
+        android:text="Demander cette activité"
+        android:id="@+id/btDemander"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="88dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:clickable="true" />
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pour conjoint"
+        android:id="@+id/btDemanderActivitePourConjoint"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="152dp"
+        android:layout_toRightOf="@+id/textView13"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -91,6 +91,8 @@ public class ListDesActivite extends Fragment
             TextView date_fin=(TextView)view.findViewById(R.id.viewDateFin);
             TextView prix_unitaire=(TextView)view.findViewById(R.id.viewPrixUnitaire);
             TextView nom_organisateur=(TextView)view.findViewById(R.id.viewNomOrganisateur);
+            TextView date_fin_inscription=(TextView)view.findViewById(R.id.viewDate_fin_inscription);
+            date_fin_inscription=(TextView)view.findViewById(R.id.viewDate_fin_inscription);
             Button btDemander=(Button)view.findViewById(R.id.btDemander);
 
             id.setText(getItem(position).getId()+" ");
@@ -99,6 +101,8 @@ public class ListDesActivite extends Fragment
             date_fin.setText(getItem(position).getDate_fin());
             prix_unitaire.setText((int)getItem(position).getPrix_unitaire()+" ");
             nom_organisateur.setText(getItem(position).getOrganisateur());
+            date_fin_inscription.setText(getItem(position).getDate_fin_inscription());
+
             btDemander.setOnClickListener(
                     new View.OnClickListener()
                     {

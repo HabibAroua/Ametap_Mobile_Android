@@ -17,6 +17,7 @@ public class Activite
     private int id_TypeActivite;
     private int idBudget;
     private String organisateur;
+    private String date_fin_inscription;
 
     public Activite(int id,String nom_activite,int capacite,int nombre_participant,String date_debut,String date_fin,double prix_unitaire,double montant_prevu,double montant_actuel,int id_TypeActivite,int idBudget,String organisateur)
     {
@@ -96,6 +97,8 @@ public class Activite
         return this.organisateur;
     }
 
+    public String getDate_fin_inscription(){return this.date_fin_inscription;}
+
     //Setters
 
     public void setId(int id)
@@ -158,7 +161,11 @@ public class Activite
         this.organisateur=organisateur;
     }
 
-    public Activite(int id,String nom_activite,String date_debut,String date_fin,double prix_unitaire,String organisateur)
+    public void setDate_fin_inscription(String date_fin_inscription){this.date_fin_inscription=date_fin_inscription;}
+
+    public void setOrganisateur(String organisateur){this.organisateur=organisateur;}
+
+    public Activite(int id,String nom_activite,String date_debut,String date_fin,double prix_unitaire,String organisateur,String date_fin_inscription)
     {
         this.id=id;
         this.nom_activite=nom_activite;
@@ -166,10 +173,33 @@ public class Activite
         this.date_fin=date_fin;
         this.prix_unitaire=prix_unitaire;
         this.organisateur=organisateur;
+        this.date_fin_inscription=date_fin_inscription;
     }
 
     public String toString()
     {
         return "id :"+this.id+" nom activite :"+this.nom_activite+" date debut :"+this.date_debut+" date fin :"+this.date_fin+" Prix unitaire :"+prix_unitaire+" nom Organisateur : "+this.organisateur ;
+    }
+
+    private String nom;
+    public String getNom()
+    {
+        return this.nom;
+    }
+
+    private String prenom;
+    public String getPrenom()
+    {
+        return this.prenom;
+    }
+
+    public Activite(int id,String prenom,String nom,String nom_activite,String date_debut,String date_fin)
+    {
+        this.id=id;
+        this.prenom=prenom;
+        this.nom=nom;
+        this.nom_activite=nom_activite;
+        this.date_debut=date_debut;
+        this.date_fin=date_fin;
     }
 }
