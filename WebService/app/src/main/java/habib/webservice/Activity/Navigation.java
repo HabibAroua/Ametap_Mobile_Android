@@ -28,8 +28,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import habib.webservice.Controller.AdherentController.AdherentService;
-import habib.webservice.Fragemnts.AfficheNotif;
-import habib.webservice.Fragemnts.Historique_des_activites;
 import habib.webservice.Fragemnts.ListDesActivite;
 import habib.webservice.R;
 
@@ -79,17 +77,18 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         Intent intent=new Intent();
         PendingIntent pIntent=PendingIntent.getActivity(Navigation.this,0,intent,0);
         Notification  notification;
-        notification = new Notification.Builder(Navigation.this)
-                .setTicker("")
-                .setContentTitle("Activite")
-                .setContentText("Accepter au nouveau activite")
-                .setSmallIcon(R.drawable.ic_ame_inscr)
-                .setContentIntent(pIntent)
-                .getNotification();
 
-        notification.flags=Notification.FLAG_AUTO_CANCEL;
-        NotificationManager nm= (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-        nm.notify(0,notification);
+            notification = new Notification.Builder(Navigation.this)
+                    .setTicker("")
+                    .setContentTitle("Activité accepter")
+                    .setContentText("Bienvenue")
+                    .setSmallIcon(R.drawable.ic_ame_inscr)
+                    .setContentIntent(pIntent)
+                    .getNotification();
+            notification.flags=Notification.FLAG_AUTO_CANCEL;
+            NotificationManager nm= (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            nm.notify(0,notification);
+
 
     }
 
@@ -97,7 +96,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new ListDesActivite(), "");
-        adapter.addFragment(new AfficheNotif(),"");
+        //adapter.addFragment(new AfficheNotif(),"");
         viewPager.setAdapter(adapter);
     }
 
@@ -158,18 +157,18 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
             startActivity(i);
         }
         else
-        if (id == 0)
+        if (id == R.id.nav_share)
         {
+            Intent i=new Intent(Navigation.this,Presentation.class);
+            startActivity(i);
             //getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Participer_activite()
             //).commit();
         }
         else
         if (id == R.id.nav_manage)
         {
-
-
-
-
+            Intent i=new Intent(Navigation.this, habib.webservice.Activity.Notification.class);
+            startActivity(i);
         }
         else if (id == R.id.nav_point)
         {
@@ -178,6 +177,7 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         }
         else if (id == R.id.nav_send)
         {
+            finish();
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

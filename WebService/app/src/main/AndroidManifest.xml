@@ -11,7 +11,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_logo_ame"
+        android:icon="@drawable/ic_ametap"
         android:label="@string/application_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -43,7 +43,11 @@
         <activity android:name=".Activity.MenuEnfant" />
         <activity android:name=".Activity.AjouterEnfant" />
         <activity android:name=".Activity.AjouterConjoint" />
-        <activity android:name=".Activity.HistoriqueActivite"></activity>
+        <activity android:name=".Activity.HistoriqueActivite" />
+        <activity android:name=".Activity.Presentation" />
+        <activity android:name=".Activity.Participer_Enfant" />
+        <activity android:name=".Activity.Notification" />
+        <activity android:name=".Activity.InformationAdherent"></activity>
     </application>
 
 </manifest>

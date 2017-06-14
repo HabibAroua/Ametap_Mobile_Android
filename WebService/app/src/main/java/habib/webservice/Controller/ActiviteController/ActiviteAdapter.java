@@ -1,6 +1,7 @@
 package habib.webservice.Controller.ActiviteController;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import java.util.List;
 
 import habib.webservice.Activity.Navigation;
 import habib.webservice.Controller.ParticipationController.ParticipationService;
+import habib.webservice.Fragemnts.Participer_activite;
 import habib.webservice.Model.Activite;
 import habib.webservice.R;
 
@@ -73,6 +75,15 @@ public class ActiviteAdapter extends ArrayAdapter<Activite>
                 Navigation n=new Navigation();
                 String login=n.LoginValue;
                 Toast.makeText(view.getContext(),"Hello",Toast.LENGTH_SHORT).show();
+            }
+        });
+        Button btDemandeEnfant=(Button)view.findViewById(R.id.toPartEnfant);
+        btDemandeEnfant.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Intent i=new Intent(getContext(), Participer_activite.class);
+                getContext().startActivity(i);
             }
         });
 

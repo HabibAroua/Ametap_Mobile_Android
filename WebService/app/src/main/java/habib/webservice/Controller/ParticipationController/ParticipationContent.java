@@ -10,7 +10,8 @@ import habib.webservice.Model.Participation;
  */
 public class ParticipationContent
 {
-    public static List<Participation> getNotification(String login)
+
+    public static  List<Participation> getNotification(String login)
     {
         //ParticipationService participationService=new ParticipationService();
         List<Participation>list=ParticipationService.getData(login);

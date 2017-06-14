@@ -50,17 +50,13 @@ public  class EnfantService
                     @Override
                     public void onResponse(String response) {
                         AlertDialog.Builder a_builder = new AlertDialog.Builder(c);
-                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 dialog.dismiss();
 
                             }
-                        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.cancel();
-                            }
+
                         });
                         AlertDialog alert = a_builder.create();
                         alert.setTitle("Alert");
@@ -211,7 +207,8 @@ public  class EnfantService
                     }
                 }) {
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() throws AuthFailureError
+            {
                 Map<String, String> params = new HashMap<String, String>();
                 params.put("id", myId);
                 params.put("nom", myNom);
@@ -219,6 +216,65 @@ public  class EnfantService
                 params.put("date_naissance", myDate_naissance);
                 params.put("ecole", myEcole);
                 params.put("login", myLogin);
+                return params;
+            }
+        };
+        MySingleton.getInstance(c).addTorequestique(stringRequest);
+    }
+
+    public void participer(String id, String idActivite,String login, final Context c)
+    {
+        IpAdresse ipAdresse = new IpAdresse();
+        final String myId, myIdActivite,myLogin;
+        myId = id;
+        myIdActivite = idActivite;
+        myLogin=login;
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, ipAdresse.getIpAdresse() + "Ametap/DataOperation/ParticipationEnfant.php",
+                new Response.Listener<String>()
+                {
+                    @Override
+                    public void onResponse(String response) {
+                        AlertDialog.Builder a_builder = new AlertDialog.Builder(c);
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
+                            }
+                        });
+                        AlertDialog alert = a_builder.create();
+                        alert.setTitle("Alert");
+                        alert.show();
+                    }
+                }
+                ,
+                new Response.ErrorListener() {
+
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        AlertDialog.Builder a_builder = new AlertDialog.Builder(c);
+                        a_builder.setMessage("Erreur").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
+                            }
+                        });
+                        AlertDialog alert = a_builder.create();
+                        alert.setTitle("Alert");
+                        alert.show();
+                        //Toast.makeText(c, "Error ...", Toast.LENGTH_SHORT).show();
+                        error.printStackTrace();
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError
+            {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("id", myId);
+                params.put("idActivite",myIdActivite);
+                params.put("login",myLogin);
                 return params;
             }
         };

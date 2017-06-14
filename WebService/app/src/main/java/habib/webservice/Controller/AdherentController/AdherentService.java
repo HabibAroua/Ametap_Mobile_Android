@@ -51,18 +51,19 @@ public class AdherentService
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ipAdresse.getIpAdresse() + "Ametap/DataOperation/AjouterAdherent.php",
                 new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response) {
-                        builder.setTitle("Server response");
-                        builder.setMessage("Response :" + response);
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onResponse(String response)
+                    {
+                        AlertDialog.Builder a_builder=new AlertDialog.Builder(c);
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                //situation.setText("");
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
                             }
                         });
-                        AlertDialog alertDialog = builder.create();
-                        alertDialog.show();
+                        AlertDialog alert=a_builder.create();
+                        alert.setTitle("Alert");
+                        alert.show();
 
                     }
                 },
@@ -94,20 +95,22 @@ public class AdherentService
         myNewLogin = newLogin;
         myNewPassword = newPassword;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ipAdresse.getIpAdresse() + "Ametap/DataOperation/ModifierInfoAdherent.php",
-                new Response.Listener<String>() {
+                new Response.Listener<String>()
+                {
                     @Override
-                    public void onResponse(String response) {
-                        builder.setTitle("Server response");
-                        builder.setMessage("Response :" + response);
-                        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onResponse(String response)
+                    {
+                        AlertDialog.Builder a_builder=new AlertDialog.Builder(c);
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which)
-                            {
-                                //situation.setText("");
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+
                             }
                         });
-                        AlertDialog alertDialog = builder.create();
-                        alertDialog.show();
+                        AlertDialog alert=a_builder.create();
+                        alert.setTitle("Alert");
+                        alert.show();
 
                     }
                 },

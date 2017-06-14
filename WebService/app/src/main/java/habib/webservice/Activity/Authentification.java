@@ -22,7 +22,7 @@ import habib.webservice.R;
 
 public class Authentification extends AppCompatActivity
 {
-    TextView lin;
+    TextView lin,sup;
     EditText log ,password;
     private String login,mot_de_passe;
 
@@ -74,6 +74,15 @@ public class Authentification extends AppCompatActivity
                 MySingleton.getInstance(Authentification.this).addTorequestique(jsonObjectRequest);
 
 
+            }
+        });
+        sup=(TextView)findViewById(R.id.sup);
+        sup.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                Intent i=new Intent(Authentification.this,MainActivity.class);
+                startActivity(i);
             }
         });
     }

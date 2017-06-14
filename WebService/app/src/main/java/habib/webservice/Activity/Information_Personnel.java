@@ -15,9 +15,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+import habib.webservice.Fragemnts.AfficheInfoAdherent;
 import habib.webservice.Fragemnts.InfoConjoint;
 import habib.webservice.Fragemnts.InfoEnfant;
-import habib.webservice.Fragemnts.ModifierInfoPers;
 import habib.webservice.R;
 
 public class Information_Personnel extends AppCompatActivity
@@ -79,7 +79,7 @@ public class Information_Personnel extends AppCompatActivity
     private void setupViewPager(ViewPager viewPager)
     {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new ModifierInfoPers(), "");
+        adapter.addFrag(new AfficheInfoAdherent(), "");
         adapter.addFrag(new InfoConjoint(), "");
         adapter.addFrag(new InfoEnfant(), "");
         viewPager.setAdapter(adapter);

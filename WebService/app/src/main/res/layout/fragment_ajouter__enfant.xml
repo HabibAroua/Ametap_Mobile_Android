@@ -9,21 +9,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Activity.MainActivity">
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scrollView">
 
-    </ScrollView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView18"
-        android:layout_above="@+id/scrollView"
-        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -37,6 +24,14 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:id="@+id/textView19"
+            android:layout_gravity="center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Ajouter un enfant"
+            android:id="@+id/textView35"
             android:layout_gravity="center_horizontal" />
 
         <TextView
@@ -106,6 +101,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/btAjouterEnfant"
                 android:layout_toEndOf="@+id/btAjouterEnfant" />
+
 
         </RelativeLayout>
 

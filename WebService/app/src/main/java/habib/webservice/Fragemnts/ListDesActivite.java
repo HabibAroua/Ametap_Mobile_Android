@@ -2,6 +2,7 @@ package habib.webservice.Fragemnts;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -12,10 +13,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+
 import habib.webservice.Activity.Navigation;
+import habib.webservice.Activity.Participer_Enfant;
 import habib.webservice.Controller.ActiviteController.ActiviteContent;
 import habib.webservice.Controller.ActiviteController.ActiviteService;
 import habib.webservice.Controller.ParticipationController.ParticipationService;
@@ -125,6 +130,20 @@ public class ListDesActivite extends Fragment
                     Navigation n=new Navigation();
                     String login=n.LoginValue;
                     participationService.ParticipationConjoint(login,id.getText().toString(),getContext());
+                }
+            });
+
+            Button btDemandeEnfant=(Button)view.findViewById(R.id.toPartEnfant);
+            btDemandeEnfant.setOnClickListener(new View.OnClickListener()
+            {
+                public void onClick(View v)
+                {
+                    Toast.makeText(context,id.getText().toString(),Toast.LENGTH_SHORT).show();
+                    Intent i=new Intent(context,Participer_Enfant.class);
+                    i.putExtra("value1",id.getText().toString());
+                    context.startActivity(i);
+                    //context.startActivity(new Intent(context, Participer_Enfant.class));
+
                 }
             });
 
