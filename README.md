@@ -2,4 +2,4 @@
 
 C'est la partie mobile de l'AMETAP , C'est pour le client (les adherents) de l'AMETAP
 <br>Le SE : Android version kitkat 4.4 (on peut changer la version)
-Le client doit être un employee avec L'ETAP
+Le client doit être un employee avec L'ETAP et avoir un cin
