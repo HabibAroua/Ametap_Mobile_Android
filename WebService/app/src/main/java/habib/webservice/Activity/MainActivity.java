@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
 import habib.webservice.Controller.AdherentController.AdherentService;
 import habib.webservice.R;
 
@@ -16,7 +15,6 @@ public class MainActivity extends AppCompatActivity
     Button btAjouter, btEffacer;
     String URL = "http://192.168.1.41:88/Ametap/DataOperation/AjouterAdherent.php";
     AlertDialog.Builder builder;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
