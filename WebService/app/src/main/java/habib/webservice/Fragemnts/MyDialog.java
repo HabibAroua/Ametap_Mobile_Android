@@ -11,7 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-
 import habib.webservice.R;
 
 /**
@@ -26,10 +25,11 @@ public class MyDialog extends DialogFragment
         View rootView = inflater.inflate(R.layout.fragment_ajouter__enfant, container, false);
         getDialog().setTitle("Simple Dialog");
         Button dismiss = (Button) rootView.findViewById(R.id.btEffacerEnfant);
-        dismiss.setOnClickListener(new View.OnClickListener() {
-
+        dismiss.setOnClickListener(new View.OnClickListener() 
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) 
+            {
                 dismiss();
             }
         });
@@ -43,16 +43,20 @@ public class MyDialog extends DialogFragment
         builder.setTitle("Simple Dialog");
         builder.setMessage("Some message here");
 
-        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+        builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() 
+        {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialog, int which) 
+            {
                 dismiss();
             }
         });
 
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() 
+        {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
+            public void onClick(DialogInterface dialog, int which) 
+            {
                 dismiss();
             }
         });
