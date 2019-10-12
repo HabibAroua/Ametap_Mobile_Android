@@ -11,10 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Toast;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import habib.webservice.Fragemnts.AfficheInfoAdherent;
 import habib.webservice.Fragemnts.InfoConjoint;
 import habib.webservice.Fragemnts.InfoEnfant;
@@ -25,7 +23,8 @@ public class Information_Personnel extends AppCompatActivity
     private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private int[] tabIcons = {
+    private int[] tabIcons = 
+    {
             R.drawable.info_pers_icon,
             R.drawable.ic_conjoint,
             R.drawable.ic_enfant
@@ -117,6 +116,4 @@ public class Information_Personnel extends AppCompatActivity
             return mFragmentTitleList.get(position);
         }
     }
-
-
 }
