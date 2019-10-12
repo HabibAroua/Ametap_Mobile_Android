@@ -28,11 +28,11 @@ public class Information_Personnel extends AppCompatActivity
             R.drawable.info_pers_icon,
             R.drawable.ic_conjoint,
             R.drawable.ic_enfant
-
     };
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) 
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information__personnel);
         toolbar = (Toolbar) findViewById(R.id.toolbar1);
@@ -65,7 +65,7 @@ public class Information_Personnel extends AppCompatActivity
                 Toast.makeText(Information_Personnel.this,"Hello",Toast.LENGTH_SHORT).show();
             }
         });
-            }
+    }
 
     private void setupTabIcons()
     {
@@ -88,6 +88,7 @@ public class Information_Personnel extends AppCompatActivity
     {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
+        
         public ViewPagerAdapter(FragmentManager manager)
         {
             super(manager);
@@ -104,6 +105,7 @@ public class Information_Personnel extends AppCompatActivity
         {
             return mFragmentList.size();
         }
+        
         public void addFrag(Fragment fragment, String title)
         {
             mFragmentList.add(fragment);
