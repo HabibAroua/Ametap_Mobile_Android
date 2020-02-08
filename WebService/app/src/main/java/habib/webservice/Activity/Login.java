@@ -8,15 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import habib.webservice.Controller.IpAdresse;
 import habib.webservice.Controller.MySingleton;
 import habib.webservice.R;
