@@ -16,7 +16,8 @@ public class Participer_Enfant extends AppCompatActivity
     public static String idActivite;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_participer__enfant);
         try
@@ -33,7 +34,5 @@ public class Participer_Enfant extends AppCompatActivity
         {
             exceptionPartEnfant.setText("Aucun enfant");
         }
-
-
     }
 }
