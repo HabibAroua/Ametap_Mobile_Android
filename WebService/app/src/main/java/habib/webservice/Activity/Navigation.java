@@ -23,10 +23,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import habib.webservice.Controller.AdherentController.AdherentService;
 import habib.webservice.Fragemnts.ListDesActivite;
 import habib.webservice.R;
@@ -44,12 +42,12 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        fab.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) 
+            {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
@@ -60,15 +58,12 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         Intent i=getIntent();
         LoginValue= i.getStringExtra("value1");
         PasswordValue=i.getStringExtra("value2");
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
@@ -88,8 +83,6 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
             notification.flags=Notification.FLAG_AUTO_CANCEL;
             NotificationManager nm= (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             nm.notify(0,notification);
-
-
     }
 
     private void setupViewPager(ViewPager viewPager)
@@ -161,8 +154,6 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
         {
             Intent i=new Intent(Navigation.this,Presentation.class);
             startActivity(i);
-            //getSupportFragmentManager().beginTransaction().replace(R.id.drawer_layout,new Participer_activite()
-            //).commit();
         }
         else
         if (id == R.id.nav_manage)
@@ -188,18 +179,13 @@ public class Navigation extends AppCompatActivity implements NavigationView.OnNa
     public void toLogin()
     {
         Intent i=new Intent(Navigation.this,Login.class);
-
         startActivity(i);
     }
-
-
 }
 
 class ViewPagerAdapter extends FragmentPagerAdapter
 {
-
     private final List<Fragment> mFragmentList = new ArrayList<>();
-
     private final List<String> mFragmentTitleList = new ArrayList<>();
     public ViewPagerAdapter(FragmentManager manager)
     {
@@ -207,14 +193,12 @@ class ViewPagerAdapter extends FragmentPagerAdapter
     }
 
     @Override
-
     public Fragment getItem(int position)
     {
         return mFragmentList.get(position);
     }
 
     @Override
-
     public int getCount()
     {
         return mFragmentList.size();
@@ -225,12 +209,10 @@ class ViewPagerAdapter extends FragmentPagerAdapter
         mFragmentList.add(fragment);
         mFragmentTitleList.add(title);
     }
+    
     @Override
-
     public CharSequence getPageTitle(int position)
     {
         return mFragmentTitleList.get(position);
     }
-
-
 }
