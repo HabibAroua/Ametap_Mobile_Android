@@ -46,36 +46,48 @@ public  class EnfantService
         myEcole = ecole;
         myLogin = login;
         StringRequest stringRequest = new StringRequest(Request.Method.POST, ipAdresse.getIpAdresse() + "Ametap/DataOperation/AjouterEnfant.php",
-                new Response.Listener<String>() {
+                new Response.Listener<String>() 
+                {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(String response) 
+                    {
                         AlertDialog.Builder a_builder = new AlertDialog.Builder(c);
-                        a_builder.setMessage(response).setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-
+                        a_builder.setMessage(response).setCancelable(false).setPositiveButton
+                        (
+                            "OK", 
+                            new DialogInterface.OnClickListener() 
+                            {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) 
+                                {
+                                    dialog.dismiss();
+                                }
                             }
-
-                        });
+                        );
                         AlertDialog alert = a_builder.create();
                         alert.setTitle("Alert");
                         alert.show();
                     }
                 }
                 ,
-                new Response.ErrorListener() {
-
+                new Response.ErrorListener() 
+                {
                     @Override
-                    public void onErrorResponse(VolleyError error) {
+                    public void onErrorResponse(VolleyError error) 
+                    {
                         AlertDialog.Builder a_builder = new AlertDialog.Builder(c);
-                        a_builder.setMessage("Erreur").setCancelable(false).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-
+                        a_builder.setMessage("Erreur").setCancelable(false).setPositiveButton
+                        (
+                            "OK", 
+                            new DialogInterface.OnClickListener() 
+                            {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) 
+                                {
+                                    dialog.dismiss();
+                                }
                             }
-                        });
+                        );
                         AlertDialog alert = a_builder.create();
                         alert.setTitle("Alert");
                         alert.show();
